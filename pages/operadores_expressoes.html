@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Operadores e Expressões em C - DevAprender C</title>
+    <link rel="stylesheet" href="../styles/style.css" />
+    <script src="../scripts/scripts.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <div class="header-container">
+            <img src="../images/catolicalogo.png" alt="Logo Católica" class="logo-header" />
+            <div class="titulo-header">
+                <img src="../images/logosite.png" alt="Logo DevAprender C" />
+            </div>
+
+        </div>
+    </header>
+
+    <div class="layout">
+        <aside class="sidebar">
+            <nav>
+                <ul>
+                    <li><a href="../index.html">Início</a></li>
+                    <li><a href="logica_programacao.html">Lógica de Programação</a></li>
+                    <li><a href="introducao_c.html">Introdução à C</a></li>
+                    <li><a href="entrada_saida_dados.html">Entrada/Saída</a></li>
+                    <li><a href="tipos_dados_variaveis.html">Variáveis</a></li>
+                    <li class="current"><a href="operadores_expressoes.html">Operadores</a></li>
+                    <li><a href="estruturas_condicionais.html">Condicionais</a></li>
+                    <li><a href="estruturas_repeticao.html">Repetição</a></li>
+                    <li><a href="sobre.html">Sobre</a></li>
+                </ul>
+                <div class="logo-2">
+                    <img src="../images/logo2.png" alt="Logo Sidebar" class="imagem-logo-2" />
+                </div>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <section id="conteudo-principal">
+                <div class="conteudo-interativo">
+                    <div class="card-conceito" onclick="expandirCard(this)">
+                        <h2> Operadores e Expressões</h2>
+                        <p>Operadores são símbolos especiais que realizam operações sobre operandos. Uma expressão
+                            combina operadores e operandos e retorna um resultado.</p>
+                    </div>
+
+                    <div class="card-conceito" onclick="expandirCard(this)">
+                        <h2>Operadores Aritméticos</h2>
+                        <p>Usados para cálculos matemáticos básicos:</p>
+                        <ul>
+                            <li><code>+</code> : Soma</li>
+                            <li><code>-</code> : Subtração</li>
+                            <li><code>*</code> : Multiplicação</li>
+                            <li><code>/</code> : Divisão</li>
+                            <li><code>%</code> : Resto da divisão inteira</li>
+                        </ul>
+                        <div class="codigo-fluxo-container">
+                            <pre><code class="language-c">
+#include &lt;stdio.h&gt;
+
+int main() {
+    int a = 10, b = 4;
+    float c = 10.0f, d = 4.0f;
+
+    printf("a + b = %d\n", a + b);
+    printf("a / b = %d\n", a / b);
+    printf("c / d = %.2f\n", c / d);
+    printf("a %% b = %d\n", a % b);
+
+    return 0;
+}
+                            </code></pre>
+
+                        </div>
+                    </div>
+
+                    <div class="card-conceito" onclick="expandirCard(this)">
+                        <h2>Operadores Relacionais</h2>
+                        <p>Comparam valores e retornam verdadeiro (1) ou falso (0):</p>
+                        <ul>
+
+
+                            <li><code>==</code> : Igual a
+                            <li><code>!=</code> : Diferente de
+                            <li><code>&lt;</code> Menor que
+                            <li><code>&gt;</code> : Maior que
+                            <li><code>&lt;=</code> : Menor ou igual a
+                            <li><code>&gt;=</code> : Maior ou igual a
+                        </ul>
+                        <div class="codigo-fluxo-container">
+                            <pre><code class="language-c">
+#include &lt;stdio.h&gt;
+
+int main() {
+    int x = 5, y = 10;
+
+    printf("x == y: %d\n", x == y);
+    printf("x &lt; y: %d\n", x &lt; y);
+    printf("x &gt; y: %d\n", x > y);
+
+    return 0;
+}
+                            </code></pre>
+                        </div>
+                    </div>
+
+                    <div class="card-conceito" onclick="expandirCard(this)">
+                        <h2>Operadores Lógicos</h2>
+                        <p>Combinam expressões booleanas:</p>
+                        <ul>
+                            <li><code>&&</code> : E</li>
+                            <li><code>||</code> : OU</li>
+                            <li><code>!</code> : NÃO</li>
+                        </ul>
+                        <div class="codigo-fluxo-container">
+                            <pre><code class="language-c">
+#include &lt;stdio.h&gt;
+
+int main() {
+    int idade = 25;
+    int empregado = 1;
+
+    if (idade >= 18 && empregado) {
+        printf("Maior de idade e empregado.\n");
+    }
+
+    return 0;
+}
+                            </code></pre>
+                        </div>
+                    </div>
+
+                    <div class="card-conceito" onclick="expandirCard(this)">
+                        <h2>Ordem de Precedência</h2>
+                        <p>A ordem de precedência define a sequência de avaliação dos operadores.</p>
+                        <ol>
+                            <li>Parênteses <code>()</code></li>
+                            <li>Unários (<code>!</code>, <code>-</code>, etc.)</li>
+                            <li>Multiplicação / Divisão / Módulo</li>
+                            <li>Adição / Subtração</li>
+                            <li>Relacionais / Igualdade</li>
+                            <li>Lógicos (E, OU)</li>
+                        </ol>
+                        <p><strong>Exemplo:</strong></p>
+                        <div class="codigo-fluxo-container">
+                            <pre><code class="language-c">
+int resultado = 5 + 3 * 2; // resultado = 11
+int resultado2 = (5 + 3) * 2; // resultado2 = 16
+                            </code></pre>
+                        </div>
+                    </div>
+
+                    <div class="card-conceito" onclick="expandirCard(this)">
+                        <h2>Exemplo Prático</h2>
+
+                        <div class="exercicio">
+                            <p><b>Desafio:</b> Verifique se um número é múltiplo de 3 e de 5 ao mesmo tempo.</p>
+
+                            <button class="botao-ver-codigo" onclick="mostrarCodigo('ex3')">Ver Código</button>
+                            <div id="ex3" class="codigo-oculto">
+                                <div class="codigo-fluxo-container">
+                                    <pre><code class="language-c">
+#include &lt;stdio.h&gt;
+
+int main() {
+    int numero = 15;
+
+    if (numero % 3 == 0 && numero % 5 == 0) {
+        printf("O número é múltiplo de 3 e de 5.\n");
+    } else {
+        printf("O número NÃO é múltiplo de 3 e de 5 ao mesmo tempo.\n");
+    }
+
+    return 0;
+}
+            </code></pre>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+
+                    <div class="card-conceito">
+                        <h2>Desafio</h2>
+                        <div class="exercicio">
+                            <p><b>Desafio:</b> Dado o valor de uma compra, aplique 10% de desconto se o valor for maior
+                                que R$ 100. Mostre o valor original, o desconto (se houver) e o valor final.</p>
+                            <button class="botao-exercicio" onclick="mostrarCodigo('ex4')">Ver Solução</button>
+                            <div id="ex4" class="codigo-oculto">
+                                <div class="codigo-fluxo-container">
+                                    <pre><code class="language-c">
+#include &lt;stdio.h&gt;
+
+int main() {
+    float valorCompra = 120.0;
+    float desconto = 0.0;
+
+    if (valorCompra > 100.0) {
+        desconto = valorCompra * 0.10f;
+    }
+
+    float valorFinal = valorCompra - desconto;
+
+    printf("Valor original: R$ %.2f\n", valorCompra);
+    printf("Desconto: R$ %.2f\n", desconto);
+    printf("Valor final: R$ %.2f\n", valorFinal);
+
+    return 0;
+}
+            </code></pre>
+
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <a href="estruturas_condicionais.html" class="botao-iniciar">Próximo</a>
+
+            </section>
+
+        </main>
+    </div>
+
+    <footer>
+        <div class="footer-container">
+            <p>DevAprender C © 2025</p>
+        </div>
+    </footer>
+</body>
+</html>

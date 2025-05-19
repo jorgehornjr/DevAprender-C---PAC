@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Estruturas Condicionais - DevAprender C</title>
+    <link rel="stylesheet" href="../styles/style.css" />
+    <script src="../scripts/scripts.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <div class="header-container">
+            <img src="../images/catolicalogo.png" alt="Logo Católica" class="logo-header" />
+            <div class="titulo-header">
+                <img src="../images/logosite.png" alt="Logo DevAprender C" />
+            </div>
+
+        </div>
+    </header>
+
+    <div class="layout">
+        <aside class="sidebar">
+            <nav>
+                <ul>
+                    <li><a href="../index.html">Início</a></li>
+                    <li><a href="logica_programacao.html">Lógica de Programação</a></li>
+                    <li><a href="introducao_c.html">Introdução à C</a></li>
+                    <li><a href="entrada_saida_dados.html">Entrada/Saída</a></li>
+                    <li><a href="tipos_dados_variaveis.html">Variáveis</a></li>
+                    <li><a href="operadores_expressoes.html">Operadores</a></li>
+                    <li class="current"><a href="estruturas_condicionais.html">Condicionais</a></li>
+                    <li><a href="estruturas_repeticao.html">Repetição</a></li>
+                    <li><a href="sobre.html">Sobre</a></li>
+                </ul>
+                <div class="logo-2">
+                    <img src="../images/logo2.png" alt="Logo Sidebar" class="imagem-logo-2" />
+                </div>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <section id="conteudo-principal">
+                <div class="conteudo-interativo">
+                    <div class="card-conceito" onclick="expandirCard(this)">
+                        <h2>Estruturas Condicionais </h2>
+                        <p>Em algoritmos, usamos a estrutura se e senão para representar uma estrutura condicional, onde
+                            comparamos valores ou variáveis para decidir se uma condição<br> é verdadeira ou falsa. Em C
+                            ANSI,
+                            essa estrutura é implementada usando if, else if e else.</p>
+
+                        <div class="codigo-fluxo-container">
+                            <pre><code class="language-c">
+if (condição1) { 
+// Código se condição1 for verdadeira 
+} else if (condição2) { 
+// Código se condição2 for verdadeira 
+} else { 
+// Código se todas as condições forem falsas 
+}
+</code></pre>
+                        </div>
+                        <div class="exercicio">
+                            <h3>Exemplos</h3>
+                            <b>Exemplo 01:</b> Verificar se um número é positivo, negativo ou zero.<br>
+                            <button class="botao-ver-codigo" onclick="mostrarCodigo('condicoes1')">Ver Código em C +
+                                Fluxograma</button>
+                            <div id="condicoes1" class="codigo-oculto">
+                                <div class="codigo-fluxo-container">
+                                    <pre><code class="language-c">
+#include &lt;stdio.h&gt;
+int main() { 
+
+// Variáveis 
+int numero; 
+
+// Entrada de dados 
+printf("Digite um número inteiro: "); 
+scanf("%i", &numero); 
+
+// Processamento/Saída de dados 
+if (numero &gt; 0) { 
+printf("%i é um número positivo.\n", numero); 
+    } else if (numero &lt; 0) { 
+        printf("%i é um número negativo.\n", numero); 
+    } else { 
+        printf("Você digitou zero.\n"); 
+    } 
+ 
+    return 0; 
+}
+</code></pre>
+                                    <img src="../images/Condicionais1.png" alt="Fluxograma Condicionais1"
+                                        class="imagem-fluxograma">
+                                </div>
+
+                                <p><b>Explicação:</p></b>
+                                <ul>
+                                    <li>if (numero &gt; 0): Verifica se o número é positivo. </li>
+                                    <li>else if (numero &lt; 0): Verifica se o número é negativo, caso a primeira
+                                        condição seja
+                                        falsa.</li>
+                                    <li>else: Executado se o número for zero.</li>
+                                </ul>
+                            </div>
+                            <br>
+                            <br>
+                            <b>Exemplo 02: </b>Verificar se um número é inteiro ou quebrado.<br>
+                            <button class="botao-ver-codigo" onclick="mostrarCodigo('condicoes2')">Ver Código em C +
+                                Fluxograma</button>
+                            <div id="condicoes2" class="codigo-oculto">
+                                <div class="codigo-fluxo-container">
+                                    <pre><code class="language-c">
+#include &lt;stdio.h&gt;
+int main() { 
+ 
+// Variáveis 
+    float numero; 
+ 
+// Entrada de dados 
+    printf("Digite o número: "); 
+    scanf("%f", &numero); 
+ 
+// Processamento/Saída de dados 
+    if (numero == (int)numero) { 
+        printf("O número é inteiro\n"); 
+    } else { 
+        printf("O número é quebrado\n"); 
+    } 
+ 
+    return 0; 
+}
+</code></pre>
+                                    <img src="../images/Condicionais2.png" alt="Fluxograma Condicionais2"
+                                        class="imagem-fluxograma">
+                                </div>
+                                <p><b>Explicação:</b></p>
+                                <ul>
+                                    <li>(int)numero: Converte o número para inteiro, permitindo a comparação. </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-conceito">
+                        <h2>Exercícios</h2>
+                        <div class="exercicio">
+                            <p><b>Exercício 01: </b>Peça a nota de um aluno (0 a 10) e mostre se ele foi aprovado (nota
+                                ≥ 6) ou reprovado
+                                (nota &lt; 6).</p>
+                            <button class="botao-exercicio" onclick="mostrarCodigo('condicoes3')">Ver Solução</button>
+                            <div id="condicoes3" class="codigo-oculto">
+                                <div class="codigo-fluxo-container">
+                                    <pre><code class="language-c">
+#include &lt;stdio.h&gt;
+int main() {
+    float nota;
+
+    // Solicita a nota do aluno
+    printf("Digite a nota do aluno (0 a 10): ");
+    scanf("%f", &nota);
+
+    // Verifica se a nota está no intervalo válido
+    if (nota &lt; 0 || nota &gt; 10) {
+        printf("Nota inválida! Digite um valor entre 0 e 10.\n");
+    } else {
+        // Verifica se o aluno foi aprovado ou reprovado
+        if (nota &lt;= 6) {
+            printf("Aluno aprovado! (Nota: %.1f)\n", nota);
+        } else {
+            printf("Aluno reprovado. (Nota: %.1f)\n", nota);
+        }
+    }
+
+    return 0;
+}
+</code></pre>
+                                </div>
+                            </div>
+                            <p><b>Exercício 02: </b>Perguntar a idade do usuário e dizer se ele pode dirigir (idade ≥
+                                18).<br></p>
+                            <button class="botao-exercicio" onclick="mostrarCodigo('condicoes4')">Ver Solução</button>
+                            <div id="condicoes4" class="codigo-oculto">
+                                <div class="codigo-fluxo-container">
+                                    <pre><code class="language-c">
+
+#include &lt;stdio.h&gt;
+
+int main() {
+    int idade;
+
+    // Solicita a idade do usuário
+    printf("Digite sua idade: ");
+    scanf("%d", &idade);
+
+    // Verifica se pode dirigir
+    if (idade &gt;= 18) {
+        printf("Você pode dirigir! (Idade: %d anos)\n", idade);
+    } else {
+        printf("Você NÃO pode dirigir. (Idade: %d anos)\n", idade);
+    }
+
+    return 0;
+}
+
+</code></pre>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="card-conceito" onclick="expandirCard(this)">
+                        <h2>Estruturas de seleção (switch)</h2>
+                        Em algoritmos, a estrutura de seleção pode ser conhecida como uma estrutura de
+                        escolha. Usamos este método para selecionar ou escolher uma opção verdadeira, <br>
+                        também pode ser usada para criar um menu em um programa. Para usar esta
+                        estrutura de seleção em C ANSI usamos o <b>switch.</b>
+                        <p><b><span style="color: #b60101;">ATENÇÃO: </span></b>Sempre use break após cada case, a menos
+                            que queira intencionalmente executar múltiplos
+                            blocos! </p>
+                        <div class="codigo-fluxo-container">
+                            <pre><code class="language-c">
+switch ([opção]){  
+case [opção 1]:  
+// codificação  
+break;  
+case [opção 2]:  
+// codificação  
+break;  
+case [opção 3]:  
+// codificação  
+break;  
+default:  
+// codificação  
+} 
+</code></pre>
+                        </div>
+                        <h3>Exemplo Prático</h3>
+                        <b>Desafio: </b>Dias da semana.<br>
+                        <button class="botao-ver-codigo" onclick="mostrarCodigo('condicoes5')">Ver Código</button>
+                        <div id="condicoes5" class="codigo-oculto">
+                            <div class="codigo-fluxo-container">
+                                <pre><code class="language-c">
+#include &lt;stdio.h&gt;
+int main() { 
+
+// Variáveis 
+int dia; 
+
+// Entrada de dados 
+printf("Digite um número de 1 a 7: "); 
+scanf("%i", &dia); // Lê o número digitado 
+
+// Processamento/Saída de dados 
+    switch (dia) { 
+        case 1: 
+            printf("Domingo\n"); 
+            break; 
+        case 2: 
+            printf("Segunda-feira\n"); 
+            break; 
+        case 3: 
+            printf("Terça-feira\n"); 
+            break; 
+        case 4: 
+            printf("Quarta-feira\n"); 
+            break; 
+        case 5: 
+            printf("Quinta-feira\n"); 
+            break; 
+        case 6: 
+            printf("Sexta-feira\n"); 
+            break; 
+        case 7: 
+            printf("Sábado\n"); 
+            break; 
+        default: 
+            printf("Número inválido! Digite um valor entre 1 e 7.\n"); 
+    } 
+ 
+    return 0;
+
+    }
+    </code></pre>
+                            </div>
+                            <p><b>Explicação: </b></p>
+                            <ul>
+                                <li>switch (dia): Avalia o valor da variável dia. </li>
+                                <li>licase X: Compara dia com o valor X e executa o código correspondente. </li>
+                                <li>break: Sai do switch após executar o case. </li>
+                                <li>default: Executado se nenhum case for correspondente.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="card-conceito">
+                        <h2>Exercícios</h2>
+                        <div class="exercicio">
+                            <p><b>Exercício 01: </b>Mostre um menu com 3 opções de comida (1: Pizza, 2: Hamburguer, 3:
+                                Salada). Use
+                                switch para exibir o prato escolhido ou "Opção inválida".</p>
+                            <button class="botao-exercicio" onclick="mostrarCodigo('condicoes6')">Ver Solução</button>
+                            <div id="condicoes6" class="codigo-oculto">
+                                <div class="codigo-fluxo-container">
+                                    <pre><code class="language-c">
+#include &lt;stdio.h&gt;
+int main() {
+    int opcao;
+    
+    // Mostra o menu
+    printf("MENU DE COMIDAS:\n");
+    printf("1 - Pizza\n");
+    printf("2 - Hamburguer\n");
+    printf("3 - Salada\n");
+    printf("Digite o número da sua opção: ");
+    scanf("%d", &opcao);
+    
+    // Verifica a escolha usando switch
+    switch(opcao) {
+        case 1:
+            printf("Você escolheu: Pizza!\n");
+            break;
+        case 2:
+            printf("Você escolheu: Hamburguer!\n");
+            break;
+        case 3:
+            printf("Você escolheu: Salada!\n");
+            break;
+        default:
+            printf("Opção inválida!\n");
+    }
+    
+    return 0;
+}
+</code></pre>
+                                </div>
+                            </div>
+
+                            <p><b>Exercício 02: </b>Receba um número (1 a 4) e mostre a estação do ano correspondente
+                                (Verão, Outono,
+                                Inverno, Primavera). Utilize switch para mostrar a opção selecionada.</p>
+                            <button class="botao-exercicio" onclick="mostrarCodigo('condicoes7')">Ver Solução</button>
+                            <div id="condicoes7" class="codigo-oculto">
+                                <div class="codigo-fluxo-container">
+                                    <pre><code class="language-c">
+#include &lt;stdio.h&gt;
+int main() {
+    int numero;
+    
+    // Mostra as opções
+    printf("Estações do Ano:\n");
+    printf("1 - Verão\n");
+    printf("2 - Outono\n");
+    printf("3 - Inverno\n");
+    printf("4 - Primavera\n");
+    printf("Digite o número da estação (1-4): ");
+    scanf("%d", &numero);
+    
+    // Verifica a escolha usando switch
+    switch(numero) {
+        case 1:
+            printf("Estação selecionada: Verão (Dez-Jan-Fev)\n");
+            break;
+        case 2:
+            printf("Estação selecionada: Outono (Mar-Abr-Mai)\n");
+            break;
+        case 3:
+            printf("Estação selecionada: Inverno (Jun-Jul-Ago)\n");
+            break;
+        case 4:
+            printf("Estação selecionada: Primavera (Set-Out-Nov)\n");
+            break;
+        default:
+            printf("Opção inválida! Digite um número entre 1 e 4.\n");
+    }
+    
+    return 0;
+}
+</code></pre>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <a href="estruturas_repeticao.html" class="botao-iniciar">Próximo</a>
+
+            </section>
+        </main>
+    </div>
+    <footer>
+        <div class="footer-container">
+            <p>DevAprender C © 2025</p>
+        </div>
+    </footer>
+</body>
+
+</html>

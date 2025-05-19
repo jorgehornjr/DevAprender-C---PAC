@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lógica de Programação - DevAprender C</title>
+    <link rel="stylesheet" href="../styles/style.css">
+    <script src="../scripts/scripts.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <div class="header-container">
+            <img src="../images/catolicalogo.png" alt="Logo Católica" class="logo-header">
+            <div class="titulo-header">
+                <img src="../images/logosite.png" alt="Logo DevAprender C" />
+            </div>
+
+        </div>
+    </header>
+
+    <div class="layout">
+        <aside class="sidebar">
+            <nav>
+                <ul>
+                    <li><a href="../index.html">Início</a></li>
+                    <li class="current"><a href="logica_programacao.html">Lógica de Programação</a></li>
+                    <li><a href="introducao_c.html">Introdução à C</a></li>
+                    <li><a href="entrada_saida_dados.html">Entrada/Saída</a></li>
+                    <li><a href="tipos_dados_variaveis.html">Variáveis</a></li>
+                    <li><a href="operadores_expressoes.html">Operadores</a></li>
+                    <li><a href="estruturas_condicionais.html">Condicionais</a></li>
+                    <li><a href="estruturas_repeticao.html">Repetição</a></li>
+                    <li><a href="sobre.html">Sobre</a></li>
+                </ul>
+                <div class="logo-2">
+                    <img src="../images/logo2.png" alt="Logo Sidebar" class="imagem-logo-2" />
+                </div>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <section id="conteudo-principal">
+
+                <div class="conteudo-interativo">
+                    <div class="card-conceito" onclick="expandirCard(this)">
+                        <h2>O que é Lógica de Programação?</h2>
+                        <div class="card-content">
+                            <p>É a técnica de organizar pensamentos para resolver problemas de forma que um computador
+                                possa entender e executar.</p>
+                            <p>Imagine como uma receita de bolo - cada passo precisa estar na ordem certa!</p>
+
+                            <h3>Por que é importante?</h3>
+                            <ul>
+                                <li>Desenvolve seu raciocínio</li>
+                                <li>Ajuda a resolver problemas complexos</li>
+                                <li>É a base para qualquer linguagem de programação</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="card-conceito" onclick="expandirCard(this)">
+                        <h2>Fluxogramas</h2>
+                        <div class="card-content">
+                            Fluxogramas são diagramas visuais que representam um processo, algoritmo ou fluxo de
+                            trabalho por meio de símbolos padronizados e setas que indicam a direção do fluxo.
+
+                            <ul>
+                                <li>Oval (INÍCIO/FIM) → Indica o começo ou término.</li>
+                                <li>Retângulo (Ação) → Representa um processo ou cálculo.</li>
+                                <li>Paralelogramo (Entrada/Saída) → Mostra inputs (ex: scanf) ou outputs (ex: printf).
+                                </li>
+                                <li>Losango (Condição) → Usado para decisões (ex: if/else).</li>
+                                <li>Setas → Mostram a direção do fluxo.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="card-conceito" onclick="expandirCard(this)">
+                        <h2>Exemplo Prático</h2>
+                        <div class="card-content">
+                            <p><strong>Problema:</strong> Calcular a média de duas notas</p>
+                            <ol>
+                                <li>Pedir a primeira nota</li>
+                                <li>Pedir a segunda nota</li>
+                                <li>Somar as duas notas</li>
+                                <li>Dividir por 2</li>
+                                <li>Mostrar o resultado</li>
+                            </ol>
+                            <button class="botao-ver-codigo" onclick="mostrarCodigo('codigo-media')">Ver Código em C +
+                                Fluxograma</button>
+                            <div id="codigo-media" class="codigo-oculto">
+                                <div class="codigo-fluxo-container">
+                                    <pre><code class="language-c">
+#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+int main() {
+
+ <b>// Quais são as variáveis?</b>
+    float nota1, nota2, media;
+    
+ <b>// Entrada de dados</b>   
+    printf("Digite a primeira nota: ");
+    scanf("%f", &amp;nota1);
+    
+    printf("Digite a segunda nota: ");
+    scanf("%f", &amp;nota2);
+    
+ <b>// Processamento</b>    
+    media = (nota1 + nota2) / 2;
+    
+ <b>// Saída de dados</b>
+    printf("A média é: %.2f\n", media);
+    
+    return 0;
+}
+        </code></pre>
+                                    <img src="../images/calcular média.png" alt="Fluxograma calcular média"
+                                        class="imagem-fluxograma">
+                                </div>
+                            </div>
+                            </code></pre>
+                        </div>
+
+                    </div>
+                    <div class="card-conceito">
+                        <h2>Exercícios</h2>
+
+                        <p><strong>Exercício 1:</strong> Elabore um algoritmo em linguagem natural (passo a passo) que
+                            descreva como preparar um miojo instantâneo.</p>
+
+                        <button class="botao-exercicio" onclick="mostrarCodigo('resposta-exc1')">Ver Solução</button>
+                        <div id="resposta-exc1" class="codigo-oculto">
+                            <div class="codigo-fluxo-container">
+                                <pre><code>
+Início
+  - Pegar uma panela
+  - Colocar 500ml de água na panela
+  - Levar ao fogo e esperar ferver
+  - Abrir o pacote de miojo
+  - Colocar o miojo na água fervente
+  - Aguardar 3 minutos
+  - Desligar o fogo
+  - Adicionar o tempero
+  - Mexer bem
+  - Servir em um prato
+Fim
+        </code></pre>
+                            </div>
+                        </div>
+
+                        <p><strong>Exercício 2:</strong> Com base no exercício anterior, crie um fluxograma usando
+                            símbolos padrão. Utilize o material apresentado para referência.</p>
+
+                        <button class="botao-exercicio" onclick="mostrarCodigo('resposta-exc2')">Ver Fluxograma</button>
+                        <div id="resposta-exc2" class="codigo-oculto">
+                            <img src="../images/fluxograma_exc1.png" alt="Fluxograma exercício miojo"
+                                class="fluxograma-exercicio">
+
+                        </div>
+                    </div>
+
+                </div>
+
+                <a href="introducao_c.html" class="botao-iniciar">Próximo</a>
+    </div>
+
+    </section>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <p>DevAprender C &copy; 2025</p>
+        </div>
+    </footer>
+</body>
+</html>

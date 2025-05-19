@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introdução à Programação em C - DevAprender C</title>
+    <link rel="stylesheet" href="../styles/style.css">
+    <script src="../scripts/scripts.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <div class="header-container">
+            <img src="../images/catolicalogo.png" alt="Logo Católica" class="logo-header">
+            <div class="titulo-header">
+                <img src="../images/logosite.png" alt="Logo DevAprender C" />
+            </div>
+
+        </div>
+    </header>
+
+    <div class="layout">
+        <aside class="sidebar">
+            <nav>
+                <ul>
+                    <li><a href="../index.html">Início</a></li>
+                    <li><a href="logica_programacao.html">Lógica de Programação</a></li>
+                    <li class="current"><a href="introducao_c.html">Introdução à C</a></li>
+                    <li><a href="entrada_saida_dados.html">Entrada/Saída</a></li>
+                    <li><a href="tipos_dados_variaveis.html">Variáveis</a></li>
+                    <li><a href="operadores_expressoes.html">Operadores</a></li>
+                    <li><a href="estruturas_condicionais.html">Condicionais</a></li>
+                    <li><a href="estruturas_repeticao.html">Repetição</a></li>
+                    <li><a href="sobre.html">Sobre</a></li>
+                </ul>
+                <div class="logo-2">
+                    <img src="../images/logo2.png" alt="Logo Sidebar" class="imagem-logo-2" />
+                </div>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <section id="conteudo-principal">
+                <div class="conteudo-interativo">
+                    <div class="card-conceito" onclick="expandirCard(this)">
+                        <h2>História e Importância da Linguagem C</h2>
+                        <div class="card-content">
+                            <p>A linguagem C foi criada por Dennis Ritchie nos Bell Labs da AT&T em 1972. Seu principal
+                                objetivo era ser uma linguagem para o desenvolvimento do sistema operacional UNIX.</p>
+                            <h3>Por que C é importante?</h3>
+                            <ul>
+                                <li><strong>Base para muitas linguagens:</strong> C++, Java, C#, Python, JavaScript e
+                                    muitas outras foram influenciadas por C.</li>
+                                <li><strong>Performance:</strong> Permite controle direto sobre o hardware, resultando
+                                    em programas eficientes.</li>
+                                <li><strong>Portabilidade:</strong> Código C pode ser compilado para diversas
+                                    plataformas.</li>
+                                <li><strong>Uso em Sistemas Operacionais:</strong> Linux, Windows e macOS usam C em seus
+                                    kernels.</li>
+                                <li><strong>Desenvolvimento de Jogos:</strong> Muitas engines de jogos usam C/C++ pela
+                                    performance.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="card-conceito" onclick="expandirCard(this)">
+                        <h2>Estrutura Básica de um Programa em C</h2>
+                        <div class="card-content">
+                            <p>Todo programa em C tem uma estrutura fundamental:</p>
+                            <div class="codigo-fluxo-container">
+
+                                <pre><code class="language-c">
+#include &lt;stdio.h&gt; <b>// Biblioteca para entrada/saída</b>
+
+int main() { <b>// Função principal</b>
+    printf("Olá, Mundo!\n"); <b>// Mostra a mensagem</b>
+    return 0; <b>// Fim do programa</b>
+}
+                            </code></pre>
+                            </div>
+                            <h3>Partes principais:</h3>
+                            <ul>
+                                <li><code>#include</code> - Inclui bibliotecas</li>
+                                <li><code>int main()</code> - Função principal onde o programa começa</li>
+                                <li><code>{ }</code> - Delimitam blocos de código</li>
+                                <li><code>printf()</code> - Exibe informações na tela</li>
+                                <li><code>return 0</code> - Indica que o programa terminou com sucesso</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="card-conceito" onclick="expandirCard(this)">
+                        <h2>Como Compilar e Executar</h2>
+                        <div class="card-content">
+                            <p>Para transformar seu código em um programa executável:</p>
+                            <ol>
+                                <li>Escreva o código em um arquivo com extensão <code>.c</code> (ex: <code>ola.c</code>)
+                                </li>
+                                <li>Use um compilador como GCC:
+                                    <pre><code>gcc ola.c -o ola</code></pre>
+                                </li>
+                                <li>Execute o programa:
+                                    <pre><code>./ola</code> (Linux/macOS) ou <code>ola.exe</code> (Windows)</pre>
+                                </li>
+                            </ol>
+                            <h3>Observação:</h3>
+                            <p>Para a realização dos exercícios desta aula, utilizaremos o compilador <a
+                                    href="https://www.onlinegdb.com/online_c_compiler" target="_blank"
+                                    rel="noopener noreferrer">GBD Online</a>.</p>
+                        </div>
+                    </div>
+
+                    <div class="card-conceito" onclick="expandirCard(this)">
+                        <h2>Sintaxe Básica e Boas Práticas</h2>
+                        <div class="card-content">
+                            <h3>Comentários:</h3>
+                            <p>Explicam o código e são ignorados pelo compilador:</p>
+
+                            <div class="codigo-fluxo-container">
+                                <pre><code class="language-c">
+// Comentário de uma linha
+
+/*
+  Comentário de
+  múltiplas linhas
+*/
+                            </code></pre>
+                            </div>
+                            <h3>Boas práticas:</h3>
+                            <ul>
+                                <li>Use nomes claros para variáveis (ex: <code>idade</code> em vez de <code>x</code>)
+                                </li>
+                                <li>Mantenha a identação consistente</li>
+                                <li>Divida programas grandes em funções</li>
+                                <li>Comente partes complexas</li>
+                                <li>Não esqueça o <code>;</code> no final das instruções</li>
+                            </ul>
+                            <p><b>Identação:</b> Refere-se ao uso de espaços ou tabulações no início das linhas para
+                                mostrar a estrutura hierárquica do código (dentro de funções, ifs, loops, etc.). Embora
+                                o C não exija identação para funcionar, ela é crucial para a legibilidade.</p>
+                        </div>
+                    </div>
+
+                    <div class="card-conceito">
+                        <h2>Exercício Prático</h2>
+                        <div class="card-content">
+                            <p><strong>Desafio:</strong> Crie um programa que exiba "Meu primeiro programa em C!" na
+                                tela.</p>
+                            <button class="botao-exercicio" onclick="mostrarCodigo('resposta-exercicio')">Ver
+                                Solução</button>
+                            <div id="resposta-exercicio" class="codigo-oculto">
+                                <div class="codigo-fluxo-container">
+                                    <pre><code class="language-c">
+#include &lt;stdio.h&gt;
+
+int main() {
+    printf("Meu primeiro programa em C!\n");
+    return 0;
+}
+            </code></pre>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <a href="entrada_saida_dados.html" class="botao-iniciar">Próximo</a>
+            </section>
+        </main>
+    </div>
+
+    <footer>
+        <div class="footer-container">
+            <p>DevAprender C © 2025</p>
+        </div>
+    </footer>
+</body>
+</html>

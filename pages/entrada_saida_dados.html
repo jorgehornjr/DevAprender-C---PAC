@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Entrada e Saída de Dados - DevAprender C</title>
+    <link rel="stylesheet" href="../styles/style.css" />
+    <script src="../scripts/scripts.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <div class="header-container">
+            <img src="../images/catolicalogo.png" alt="Logo Católica" class="logo-header" />
+            <div class="titulo-header">
+                <img src="../images/logosite.png" alt="Logo DevAprender C" />
+            </div>
+        </div>
+    </header>
+
+    <div class="layout">
+        <aside class="sidebar">
+            <nav>
+                <ul>
+                    <li><a href="../index.html">Início</a></li>
+                    <li><a href="logica_programacao.html">Lógica de Programação</a></li>
+                    <li><a href="introducao_c.html">Introdução à C</a></li>
+                    <li class="current"><a href="entrada_saida_dados.html">Entrada/Saída</a></li>
+                    <li><a href="tipos_dados_variaveis.html">Variáveis</a></li>
+                    <li><a href="operadores_expressoes.html">Operadores</a></li>
+                    <li><a href="estruturas_condicionais.html">Condicionais</a></li>
+                    <li><a href="estruturas_repeticao.html">Repetição</a></li>
+                    <li><a href="sobre.html">Sobre</a></li>
+                </ul>
+                <div class="logo-2">
+                    <img src="../images/logo2.png" alt="Logo Sidebar" class="imagem-logo-2" />
+                </div>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <section id="conteudo-principal">
+                <div class="conteudo-interativo">
+                    <div class="card-conceito" onclick="expandirCard(this)">
+                        <h2>Entrada e Saída de Dados</h2>
+                        <p>A capacidade de interagir com o usuário, recebendo dados (entrada) e mostrando resultados
+                            (saída), é fundamental em programação. <br>Em C, isso é comumente feito usando funções da
+                            biblioteca padrão<code> &lt;stdio.h&gt;</code>.
+                        <h3>Uso da Função printf para Saída de Dados</h3>
+                        A função <code>printf</code> (print formatted) é usada para enviar dados formatados para a saída
+                        padrão, que geralmente é a tela do console.<br><br>
+                        <b>Sintaxe Básica:</b>
+                        <div class="codigo-fluxo-container">
+                            <pre><code class="language-c">
+printf("texto simples");
+printf("texto com valor: %especificador", variavel);
+</code></pre>
+                        </div>
+
+                        <h3>Uso da Função scanf para Entrada de Dados</h3>
+                        A função <code>scanf</code> (scan formatted) é usada para ler dados formatados da entrada
+                        padrão, geralmente o teclado, e armazená-los em variáveis.<br><br>
+
+                        <b>Sintaxe Básica:</b>
+                        <div class="codigo-fluxo-container">
+                            <pre><code class="language-c">
+scanf("%especificador", &variavel);
+</code></pre>
+                        </div>
+                    </div>
+                    <div class="card-conceito" onclick="expandirCard(this)">
+                        <h2>Formatação de Saída com Especificadores</h2>
+                        Especificadores de formato em <code>printf </code>e <code>scanf</code> controlam como os dados
+                        são interpretados e exibidos.
+                        <h3>Principais Especificadores:</h3>
+                        <ul>
+                            <li><code>%d</code> ou <code>%i</code> : Inteiro decimal com sinal (<code>int</code>)</li>
+                            <li><code>%u</code> : Inteiro decimal sem sinal (<code>unsigned int</code>)</li>
+                            <li><code>%f</code> : Ponto flutuante decimal (<code>float</code>, <code>double</code>).
+                                Para <code>scanf</code>, use <code>%f</code> para <code>float</code> e <code>%lf</code>
+                                (L minúsculo) para <code>double</code></li>
+                            <li><code>%e</code> ou <code>%E</code> : Notação científica (ex: <code>1.23e+02</code>)</li>
+                            <li><code>%c</code> : Caractere único (<code>char</code>)</li>
+                            <li><code>%s</code> : String (sequência de caracteres, terminada por <code>\\0</code>)</li>
+                            <li><code>%p</code> : Ponteiro (endereço de memória, exibido em hexadecimal)</li>
+                            <li><code>%x</code> ou <code>%X</code> : Inteiro hexadecimal sem sinal (letras minúsculas ou
+                                maiúsculas)</li>
+                            <li><code>%o</code> : Inteiro octal sem sinal</li>
+                            <li><code>%%</code> : Para imprimir o próprio caractere <code>%</code></li>
+                        </ul>
+                    </div>
+
+                    <div class="card-conceito" onclick="expandirCard(this)">
+                        <h2>Exemplos</h2>
+
+                        <b>Exemplo 01:</b> Usando <code>printf</code> para mostrar mensagens<br>
+                        <button class="botao-ver-codigo" onclick="mostrarCodigo('exemploPrintf')">Ver Código</button>
+                        <div id="exemploPrintf" class="codigo-oculto">
+                            <div class="codigo-fluxo-container">
+                                <pre><code class="language-c">
+#include &lt;stdio.h&gt;
+
+int main() {
+    printf("Olá, mundo!\\n");
+    printf("Bem-vindo ao curso de C.\\n");
+    return 0;
+}
+            </code></pre>
+                            </div>
+                        </div>
+
+                        <br><br><b>Exemplo 02:</b> Usando <code>scanf</code> para ler um número inteiro do usuário<br>
+                        <button class="botao-ver-codigo" onclick="mostrarCodigo('exemploScanf')">Ver Código</button>
+                        <div id="exemploScanf" class="codigo-oculto">
+                            <div class="codigo-fluxo-container">
+                                <pre><code class="language-c">
+#include &lt;stdio.h&gt;
+
+int main() {
+    int idade;
+    printf("Digite sua idade: ");
+    scanf("%d", &idade);
+    printf("Você tem %d anos.\\n", idade);
+    return 0;
+}
+            </code></pre>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card-conceito">
+                        <h2>Exercícios</h2>
+                        <div class="exercicio">
+                            <p><b>Exercício 1:</b> Peça nome, idade e cidade. Exiba uma mensagem com esses dados.</p>
+                            <button class="botao-exercicio" onclick="mostrarCodigo('esex1')">Ver Solução</button>
+                            <div id="esex1" class="codigo-oculto">
+                                <div class="codigo-fluxo-container">
+                                    <pre><code class="language-c">
+#include <stdio.h>
+
+int main() {
+    char nome[30];
+    int idade;
+    char cidade[50];
+
+    printf("Nome: ");
+    scanf("%s", nome);
+    printf("Idade: ");
+    scanf("%d", &idade);
+    getchar();
+    printf("Cidade: ");
+    fgets(cidade, sizeof(cidade), stdin);
+
+    int i = 0;
+    while (cidade[i] != '\0') {
+        if (cidade[i] == '\n') cidade[i] = '\0';
+        i++;
+    }
+
+    printf("\n%s, %d anos, mora em %s.\n", nome, idade, cidade);
+    return 0;
+}
+                                    </code></pre>
+                                </div>
+                            </div>
+
+                            <p><b>Exercício 2:</b> Peça 3 notas e calcule a média.</p>
+                            <button class="botao-exercicio" onclick="mostrarCodigo('esex2')">Ver Solução</button>
+                            <div id="esex2" class="codigo-oculto">
+                                <div class="codigo-fluxo-container">
+                                    <pre><code class="language-c">
+#include <stdio.h>
+
+int main() {
+    float n1, n2, n3;
+    printf("Digite as 3 notas: ");
+    scanf("%f %f %f", &n1, &n2, &n3);
+    printf("Media: %.2f\n", (n1+n2+n3)/3);
+    return 0;
+}
+                                    </code></pre>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <a href="tipos_dados_variaveis.html" class="botao-iniciar">Próximo</a>
+
+            </section>
+
+        </main>
+    </div>
+
+    <footer>
+        <div class="footer-container">
+            <p>DevAprender C © 2025</p>
+        </div>
+    </footer>
+</body>
+</html>

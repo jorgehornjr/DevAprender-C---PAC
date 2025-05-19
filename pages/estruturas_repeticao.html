@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Estruturas de Repetição - DevAprender C</title>
+    <link rel="stylesheet" href="../styles/style.css" />
+    <script src="../scripts/scripts.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <div class="header-container">
+            <img src="../images/catolicalogo.png" alt="Logo Católica" class="logo-header" />
+            <div class="titulo-header">
+                <img src="../images/logosite.png" alt="Logo DevAprender C" />
+            </div>
+
+        </div>
+    </header>
+
+    <div class="layout">
+        <aside class="sidebar">
+            <nav>
+                <ul>
+                    <li><a href="../index.html">Início</a></li>
+                    <li><a href="logica_programacao.html">Lógica de Programação</a></li>
+                    <li><a href="introducao_c.html">Introdução à C</a></li>
+                    <li><a href="entrada_saida_dados.html">Entrada/Saída</a></li>
+                    <li><a href="tipos_dados_variaveis.html">Variáveis</a></li>
+                    <li><a href="operadores_expressoes.html">Operadores</a></li>
+                    <li><a href="estruturas_condicionais.html">Condicionais</a></li>
+                    <li class="current"><a href="estruturas_repeticao.html">Repetição</a></li>
+                    <li><a href="sobre.html">Sobre</a></li>
+                </ul>
+                <div class="logo-2">
+                    <img src="../images/logo2.png" alt="Logo Sidebar" class="imagem-logo-2" />
+                </div>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <section id="conteudo-principal">
+                <div class="conteudo-interativo">
+                    <div class="card-conceito" onclick="expandirCard(this)">
+                        <h2>Estruturas de Repetição</h2>
+                        Estruturas de repetição (ou loops) são blocos de código que executam uma ação <b>várias
+                            vezes </b> uma condição for verdadeira. Elas são usadas para:
+                        <ul>
+                            <li>Evitar repetição manual de código. </li>
+                            <li>Processar listas de dados (vetores, matrizes, etc.).</li>
+                            <li>Criar menus interativos ou validar entradas.</li>
+                        </ul>
+
+                        <h3>Tipos e Quando Usar</h3>
+                        <ul>
+                            <li><b>while </b>Quando não se sabe quantas iterações serão necessárias.</li>
+                            <li><b>do... while </b>Quando o bloco deve executar pelo menos uma vez, mesmo se a condição
+                                for falsa. </li>
+                            <li><b>for </b>Quando sabe-se o número exato de iterações (ex.: percorrer um vetor) </li>
+                        </ul>
+                        <b>Iteração:</b> É o ato de repetir uma determinada função, por um determinado espaço de
+                        tempo ou até uma condição ser alcançada.
+                    </div>
+                    <div class="card-conceito">
+                        <div class="exercicio">
+                            <h2>Exemplos</h2>
+
+                            <b>Exemplo 01:</b> Validação de entrada com <code>while</code><br>
+                            <button class="botao-ver-codigo" onclick="mostrarCodigo('repeticao1')">Ver Código</button>
+                            <div id="repeticao1" class="codigo-oculto">
+                                <div class="codigo-fluxo-container">
+                                    <pre><code class="language-c">
+#include &lt;stdio.h&gt;
+int main() {
+// Variáveis 
+int numero; 
+
+// Entrada de dados 
+printf("Digite um número positivo: "); 
+scanf("%i", &numero); 
+
+// Processamento/Saída de dados 
+while (numero &lt;= 0) { // Repete até que a condição seja falsa 
+    printf("Inválido! Digite novamente: "); 
+    scanf("%i", &numero); 
+} 
+
+printf("Número válido: %d\n", numero); 
+return 0; 
+}
+</code></pre>
+                                </div>
+                            </div>
+
+                            <br><br><b>Exemplo 02:</b> Menu interativo com <code>do...while</code><br>
+                            <button class="botao-ver-codigo" onclick="mostrarCodigo('repeticao2')">Ver Código</button>
+                            <div id="repeticao2" class="codigo-oculto">
+                                <div class="codigo-fluxo-container">
+                                    <pre><code class="language-c">
+#include &lt;stdio.h&gt;
+
+int main() {
+// Variáveis 
+char opcao;
+
+// Entrada de dados 
+do {
+    printf("\nMenu:\n1 - Salvar\n2 - Sair\nEscolha: "); 
+    scanf(" %c", &opcao); // Espaço antes do %c para ignorar quebras de linha 
+
+    // Processamento/Saída de dados 
+    switch (opcao) {
+        case '1': printf("Salvando...\n"); break;
+        case '2': printf("Saindo...\n"); break;
+        default: printf("Opção inválida!\n");
+    }
+} while (opcao != '2'); // Repete até o usuário escolher '2'
+
+return 0;
+}
+</code></pre>
+                                </div>
+                            </div>
+
+                            <br><br><b>Exemplo 03:</b> Contagem regressiva com <code>for</code><br>
+                            <button class="botao-ver-codigo" onclick="mostrarCodigo('repeticao3')">Ver Código</button>
+                            <div id="repeticao3" class="codigo-oculto">
+                                <div class="codigo-fluxo-container">
+                                    <pre><code class="language-c">
+#include &lt;stdio.h&gt;
+
+int main() {
+    for (int i = 10; i &gt;= 0; i--) { // Inicia em 10, decrementa até 0
+        printf("%d\n", i);
+    }
+    printf("Fogo!\n");
+    return 0;
+}
+</code></pre>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card-conceito">
+                        <h2>Exercícios</h2>
+                        <div class="exercicio">
+                            <p><b>Exercício 01:</b> Peça ao usuário que digite uma senha. Enquanto a senha digitada
+                                estiver incorreta (ex: <code>1234</code>), o programa deve pedir novamente. <br>Quando o
+                                usuário digitar a senha correta, o programa mostra: <i>"Acesso permitido"</i>. Utilize
+                                <code>do...while</code> para realizar esta tarefa.</p>
+                            <button class="botao-exercicio" onclick="mostrarCodigo('repeticao4')">Ver Solução</button>
+                            <div id="repeticao4" class="codigo-oculto">
+                                <div class="codigo-fluxo-container">
+                                    <pre><code class="language-c">
+#include &lt;stdio.h&gt;
+#include &lt;string.h&gt;
+
+int main() {
+    char senha[10];
+
+    do {
+        printf("Digite a senha: ");
+        scanf("%s", senha);
+    } while (strcmp(senha, "1234") != 0);
+
+    printf("Acesso permitido\n");
+    return 0;
+}
+</code></pre>
+                                </div>
+                            </div>
+
+                            <p><b>Exercício 02:</b> Peça ao usuário para digitar um número inteiro. Mostre a tabuada
+                                desse número, de 1 até 10.<br> Com base no conteúdo apresentado, utilize a melhor
+                                estrutura de repetição para esta tarefa.</p>
+                            <button class="botao-exercicio" onclick="mostrarCodigo('repeticao5')">Ver Solução</button>
+                            <div id="repeticao5" class="codigo-oculto">
+                                <div class="codigo-fluxo-container">
+                                    <pre><code class="language-c">
+#include &lt;stdio.h&gt;
+
+int main() {
+    int numero;
+
+    printf("Digite um número inteiro: ");
+    scanf("%d", &numero);
+
+    for (int i = 1; i &lt;= 10; i++) {
+        printf("%d x %d = %d\n", numero, i, numero * i);
+    }
+
+    return 0;
+}
+</code></pre>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <a href="sobre.html" class="botao-iniciar">Próximo</a>
+
+            </section>
+        </main>
+    </div>
+    <footer>
+        <div class="footer-container">
+            <p>DevAprender C © 2025</p>
+        </div>
+    </footer>
+</body>
+
+</html>

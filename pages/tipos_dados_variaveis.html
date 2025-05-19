@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tipos de Dados e Variáveis em C - DevAprender C</title>
+    <link rel="stylesheet" href="../styles/style.css" />
+    <script src="../scripts/scripts.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <div class="header-container">
+            <img src="../images/catolicalogo.png" alt="Logo Católica" class="logo-header" />
+            <div class="titulo-header">
+                <img src="../images/logosite.png" alt="Logo DevAprender C" />
+            </div>
+
+        </div>
+    </header>
+
+    <div class="layout">
+        <aside class="sidebar">
+            <nav>
+                <ul>
+                    <li><a href="../index.html">Início</a></li>
+                    <li><a href="logica_programacao.html">Lógica de Programação</a></li>
+                    <li><a href="introducao_c.html">Introdução à C</a></li>
+                    <li><a href="entrada_saida_dados.html">Entrada/Saída</a></li>
+                    <li class="current"><a href="tipos_dados_variaveis.html">Variáveis</a></li>
+                    <li><a href="operadores_expressoes.html">Operadores</a></li>
+                    <li><a href="estruturas_condicionais.html">Condicionais</a></li>
+                    <li><a href="estruturas_repeticao.html">Repetição</a></li>
+                    <li><a href="sobre.html">Sobre</a></li>
+                </ul>
+                <div class="logo-2">
+                    <img src="../images/logo2.png" alt="Logo Sidebar" class="imagem-logo-2" />
+                </div>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <section id="conteudo-principal">
+                <div class="conteudo-interativo">
+                    <div class="card-conceito" onclick="expandirCard(this)">
+                        <h2>Tipos Primitivos</h2>
+                        <p>Em C, os tipos de dados primitivos são os blocos de construção básicos para armazenar
+                            informações. Os mais comuns são:</p>
+                        <ul>
+                            <li><code>int</code>: Números inteiros.</li>
+                            <li><code>float</code>: Números com casas decimais (precisão simples).</li>
+                            <li><code>double</code>: Números com casas decimais (maior precisão).</li>
+                            <li><code>char</code>: Um único caractere.</li>
+                            <li><code>void</code>: Representa "nenhum tipo".</li>
+                        </ul>
+
+                    </div>
+
+                    <div class="card-conceito" onclick="expandirCard(this)">
+                        <h2>Declaração e Inicialização de Variáveis</h2>
+                        <p>Antes de usar uma variável, é necessário declará-la com tipo e nome. Inicialização é atribuir
+                            valor a ela.</p>
+
+                        <h3>Exemplo:</h3>
+                        <div class="codigo-fluxo-container">
+                            <pre><code class="language-c">
+                                                         
+#include &lt;stdio.h&gt;
+
+int main() {
+    int idade;
+    float salario;
+    char inicial;
+    double pi_valor;
+
+    idade = 30;
+    salario = 2500.75f;
+    inicial = 'J';
+    pi_valor = 3.1415926535;
+
+    int ano = 2024;
+    float altura = 1.75f;
+
+    printf("Idade: %d\n", idade);
+    printf("Salario: %.2f\n", salario);
+    printf("Inicial: %c\n", inicial);
+    printf("PI: %lf\n", pi_valor);
+    printf("Ano: %d\n", ano);
+    printf("Altura: %.2f\n", altura);
+
+    return 0;
+}
+                                </code></pre>
+                        </div>
+                    </div>
+
+                    <div class="card-conceito" onclick="expandirCard(this)">
+                        <h2>Constantes em Programação</h2>
+                        <h3>Define</h3>
+                        <p> O <code>#define</code> é uma diretiva do pré-processador que substitui um nome por um valor
+                            em todo o código antes da compilação.</p>
+                        <b>Sintaxe: </b><code>#define NOME_DA_CONSTANTE valor</code>
+
+
+                        <div class="codigo-fluxo-container">
+                            <pre><code class="language-c">
+                                                         
+#include &lt;stdio.h&gt;
+
+#define PI 3.14159
+#define IDADE_MINIMA 18
+
+int main() {
+    float raio = 5.0;
+    float area = PI * raio * raio;
+    
+    printf("Área do círculo: %.2f\n", area);
+    printf("Idade mínima: %d\n", IDADE_MINIMA);
+    
+    return 0;
+}
+                                </code></pre>
+                        </div>
+
+                        <h3>Const</h3>
+                        <p>A palavra-chave <code>const</code> cria uma variável cujo valor não pode ser modificado após
+                            sua inicialização.</p>
+                        <b>Sintaxe: </b><code>const tipo nome_da_constante = valor;</code>
+
+                        <div class="codigo-fluxo-container">
+                            <pre><code class="language-c">
+                                                         
+#include &lt;stdio.h&gt;
+int main() {
+    const float PI = 3.14159;
+    const int IDADE_MINIMA = 18;
+    
+    float raio = 5.0;
+    float area = PI * raio * raio;
+    
+    printf("Área do círculo: %.2f\n", area);
+    printf("Idade mínima: %d\n", IDADE_MINIMA);
+    
+    // PI = 3.14; // Isso causaria um erro de compilação
+    return 0;
+}
+
+                                </code></pre>
+                        </div>
+
+                        <h3>Quando usar cada uma?</h3>
+                        <ul>
+                            <li>Use #define para valores simples que não mudam e não precisam de tipo específico</li>
+                            <li>Use const quando precisar de verificação de tipo ou quando a constante for mais complexa
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="card-conceito" onclick="expandirCard(this)">
+                        <h2>Regras de Nomenclatura</h2>
+                        <ul>
+                            <li>Deve começar com letra ou underscore.</li>
+                            <li>Não pode ser palavra reservada.</li>
+                            <li>É case-sensitive: <code>idade</code> ≠ <code>Idade</code>.</li>
+                            <li>Use nomes descritivos: <code>precoProduto</code>.</li>
+                            <li>Convenções: <code>snake_case</code>, <code>camelCase</code>, <code>PASCALCASE</code>,
+                                etc.</li>
+
+                        </ul>
+                    </div>
+
+                    <div class="card-conceito" onclick="expandirCard(this)">
+                        <h2>Atividades Resolvidas</h2>
+
+                        <div class="exercicio">
+
+                            <p><b>Desafio: </b>Declare duas variáveis, some e imprima o resultado.</p>
+                            <button class="botao-ver-codigo" onclick="mostrarCodigo('ex1')">Ver Código</button>
+                            <div id="ex1" class="codigo-oculto">
+                                <div class="codigo-fluxo-container">
+                                    <pre><code class="language-c">
+#include &lt;stdio.h&gt;
+
+int main() {
+    int numero1 = 15;
+    int numero2 = 27;
+    int soma = numero1 + numero2;
+
+    printf("Soma: %d\n", soma);
+    return 0;
+}
+                                        </code></pre>
+                                </div>
+                            </div>
+                            <p><b>Desafio: </b>Converta Celsius para Fahrenheit.</p>
+                            <button class="botao-ver-codigo" onclick="mostrarCodigo('ex2')">Ver Código</button>
+                            <div id="ex2" class="codigo-oculto">
+                                <div class="codigo-fluxo-container">
+                                    <pre><code class="language-c">
+#include &lt;stdio.h&gt;
+
+#define FATOR_CONVERSAO (9.0f/5.0f)
+#define PONTO_CONGELAMENTO 32.0f
+
+int main() {
+    float celsius = 25.5f;
+    float fahrenheit = (celsius * FATOR_CONVERSAO) + PONTO_CONGELAMENTO;
+
+    printf("%.1f C = %.1f F\n", celsius, fahrenheit);
+    return 0;
+}
+                                        </code></pre>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card-conceito">
+                        <h2>Exercícios</h2>
+
+                        <p><strong>Exercício 1:</strong> Crie um programa que declare variáveis para armazenar seu nome,
+                            sua idade, e sua altura em metros.
+                            Utilize as variáveis apropriadas e imprima os valores.</p>
+                        <button class="botao-exercicio" onclick="mostrarCodigo('resposta-exercicio')">Ver
+                            Solução</button>
+                        <div id="resposta-exercicio" class="codigo-oculto">
+                            <div class="codigo-fluxo-container">
+                                <pre><code class="language-c">
+               
+#include &lt;stdio.h&gt;
+int main() {
+    char inicial = 'L';
+    int idade = 20;
+    float altura = 1.75f;
+
+    printf("Inicial do nome: %c\n", inicial);
+    printf("Idade: %d anos\n", idade);
+    printf("Altura: %.2f metros\n", altura);
+
+    return 0;
+}
+ </code></pre>
+                            </div>
+                        </div>
+
+
+                        <p><strong>Exercício 2:</strong> Declare duas variáveis para armazenar duas notas.
+                            Calcule a média aritmética dessas notas e mostre o resultado.</p>
+                        <button class="botao-exercicio" onclick="mostrarCodigo('resposta-exercicio2')">Ver
+                            Solução</button>
+                        <div id="resposta-exercicio2" class="codigo-oculto">
+                            <div class="codigo-fluxo-container">
+                                <pre><code class="language-c">
+                
+#include &lt;stdio.h&gt;
+int main() {
+    float nota1 = 7.5f;
+    float nota2 = 8.2f;
+    float media = (nota1 + nota2) / 2;
+
+    printf("Nota 1: %.1f\n", nota1);
+    printf("Nota 2: %.1f\n", nota2);
+    printf("Média: %.2f\n", media);
+
+    return 0;
+}
+ </code></pre>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <a href="operadores_expressoes.html" class="botao-iniciar">Próximo</a>
+            </section>
+        </main>
+    </div>
+
+    <footer>
+        <div class="footer-container">
+            <p>DevAprender C © 2025</p>
+        </div>
+    </footer>
+</body>
+</html>
