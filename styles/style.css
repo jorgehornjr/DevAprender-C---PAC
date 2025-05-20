@@ -54,6 +54,7 @@ header h1 {
   flex-shrink: 0;
   margin-left: 80px;
   margin-right: auto;
+  
 }
 
 .titulo-header {
@@ -283,6 +284,22 @@ body::before {
   width: 100%;
   height: auto;
   margin-left: 100px;
+}
+
+.exercicio-fluxograma {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #f5f5f5;
+  padding: 15px;
+  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.exercicio-fluxograma {
+  max-width: 400px;
+  width: 100%;
+  height: auto;
+  margin-left: 0px;
+  
 }
 
 /* :: TEXTOS :: */
