@@ -15,5 +15,5 @@ O objetivo principal do projeto é proporcionar um ambiente **gratuito, acessív
 
 ---
 
-> Este projeto representa uma iniciativa acadêmica e colaborativa, com foco no aprendizado prático e no impacto social da tecnologia.
+> Este projeto representa uma iniciativa acadêmica e colaborativa, com foco no aprendizado prático e no impacto social da tecnologia. <
  [Acesso Direto ao Site](https://jorgehornjr.github.io/DevAprender-C---PAC/index.html)
