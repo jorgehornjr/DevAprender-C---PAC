@@ -1,11 +1,12 @@
 /* :: CORES GLOBAIS :: */
 :root {
-  --cor-primaria: #6c1fa8;
-  --cor-secundaria: #004d66;
+  --cor-primaria: #9e59d3;
+  --cor-secundaria: #78a8e6;
+  --cor-terciaria: #f5f5f5;
   --cor-fundo: #ffffff;
   --cor-texto: #333;
   --cor-borda: #e0e0e0;
-  --cor-hover: #004d66;
+  --cor-hover: #78a8e6;
 }
 
 /* :: BÁSICO :: */
@@ -25,7 +26,7 @@ body {
 header {
   height: 93px;
   background-color: black;
-  border-bottom: 3px solid var(--cor-primaria);
+  border-bottom: 5px solid var(--cor-primaria);
   display: flex;
   align-items: center;
   padding: 0 20px;
@@ -49,8 +50,8 @@ header h1 {
 }
 
 .logo-header {
-  height: 90px;
-  width: 250px;
+  height: 85px;
+  width: auto;
   flex-shrink: 0;
   margin-left: 80px;
   margin-right: auto;
@@ -93,7 +94,6 @@ body::before {
   z-index: 100;
 }
 
-
 .sidebar nav ul {
   list-style: none;
   padding: 20px;
@@ -107,7 +107,7 @@ body::before {
 .sidebar nav ul li a {
   display: block;
   padding: 10px;
-  border: 1px solid var(--cor-borda);
+  border: 2px solid rgb(255, 255, 255);
   border-radius: 6px;
   color: white;
   text-decoration: none;
@@ -131,7 +131,7 @@ body::before {
   display: block;
   justify-content: flex-start;
   align-items: flex-start;
-  margin-top: 0px;
+  margin-top: -15px;
 }
 
 .imagem-logo-2 {
@@ -144,7 +144,6 @@ body::before {
 .main-content {
    
   margin-left: 280px;
-
   flex: 1;
   padding: 30px;
   height: 100%;
@@ -174,7 +173,7 @@ body::before {
   display: inline-block;
   margin-top: 20px;
   padding: 12px 20px;
-  background-color: #000000;
+  background-color: black;
   color: var(--cor-primaria);
   font-weight: bold;
   text-decoration: none;
@@ -183,8 +182,9 @@ body::before {
 }
 
 .botao-iniciar:hover {
-  background-color: #000000;
+  background-color: black;
   transform: translateY(-2px);
+  color: var(--cor-secundaria);
 }
 
 .botao-ver-codigo {
@@ -199,13 +199,13 @@ body::before {
 }
 
 .botao-ver-codigo:hover {
-  background-color: #0388b4;
+  background-color: #568acf;
 }
 
 .botao-exercicio {
   margin-top: 15px;
   padding: 8px 15px;
-  background-color: #b60101;
+  background-color: #be3939;
   color: white;
   border: none;
   border-radius: 5px;
@@ -214,7 +214,7 @@ body::before {
 }
 
 .botao-exercicio:hover {
-  background-color: #ff0000;
+  background-color: #8f3535;
 }
 
 /* :: COMPONENTES :: */
@@ -407,7 +407,7 @@ footer {
   position: absolute;
   top: 0;
   right: 0;
-  max-width: 430px;
+  max-width: 460px;
   width: 100%;
   height: auto;
   z-index: 1;
@@ -422,10 +422,10 @@ footer {
 }
 
 .imagem-logoazul {
-  max-width: 850px;
+  max-width: 500px;
   width: 100%;
   height: auto;
-  margin-top: 120px;
+  margin-top: 30px;
 }
 
 /* :: RESPONSIVO :: */
